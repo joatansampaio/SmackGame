@@ -1,0 +1,112 @@
+/* Global Styles 
+---------------------------------------*/
+* {
+   margin: 0%;
+   padding: 0%;
+   box-sizing: border-box;
+}
+body {
+   font-family: Helvetica, sans-serif;
+}
+
+/* Game 
+--------------------------------------*/
+.wrapper {
+   border: 1px solid rgb(65, 42, 0);
+   width: 800px;
+   height: 600px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-image: url("../images/background.png");
+   overflow: hidden;
+}
+.score {
+   font-size: 50px;
+   color: rgb(3, 51, 97);
+   position: absolute;
+   top: 10%;
+   left: 15%;
+   transform: translate(-50%, -50%);
+   width: 200px;
+   height: 100px;
+   text-align: center;
+}
+.score span {
+   position: absolute;
+   padding: 6px 10px;
+}
+.countdown {
+   position: absolute;
+   top: 9%;
+   right: 5%;
+   width: 100%;
+   font-size: 50px;
+   text-align: right;
+   color: rgb(1, 47, 117);
+}
+.start-button {
+   position: absolute;
+   bottom: 10px;
+   transform: translate(-50%, -50);
+   background-color: rgb(13, 98, 226);
+   color: white;
+   padding: 20px 50px;
+   border-radius: 5px;
+   z-index: 200;
+   cursor: pointer;
+   border: none;
+   outline: none;
+   font-size: 30px;
+}
+.start-button:hover {
+   background-color: rgb(0, 60, 255);
+}
+.game {
+   width: 600px;
+   height: 400px;
+   margin: 70px auto;
+   z-index: 200;
+   display: flex;
+   flex-wrap: wrap;
+}
+.hole {
+   flex: 1 0 33.33%;
+   position: relative;
+   overflow: hidden;
+}
+.hole:after {
+   content: "";
+   display: block;
+   background-image: url("../images/hole.png");
+   position: absolute;
+   width: 100%;
+   height: 70px;
+   z-index: 2;
+   bottom: -30px;
+   background-size: contain;
+}
+.mole {
+   background-image: url("../images/character.png");
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: bottom;
+   position: absolute;
+   top: 100%;
+   width: 100%;
+   height: 100%;
+   transition: 0.4s;
+}
+.mole.small {
+   background-size: 60%;
+   background-position-y: 85px;
+}
+.mole.large {
+   background-size: 80%;
+   background-position-y: 60px;
+}
+
+.hole.up .mole {
+   top: 0;
+}
