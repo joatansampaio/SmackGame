@@ -58,7 +58,6 @@ function startGame() {
          countdownText.style.top = "50%";
          countdownText.style.right = "8%";
          countdownText.style.color = "white";
-         console.log("passou aqui");
          clearInterval(startCoundown);
       }
    }, 1000);
@@ -68,10 +67,10 @@ startButton.addEventListener("click", startGame);
 
 function smash(e) {
    gameScore++;
-   this.style.backgroundImage = "url('images/smashed.png')";
+   this.style.backgroundImage = "none";
    this.style.pointerEvents = "none";
    setTimeout(() => {
-      this.style.backgroundImage = "url('images/character.png')";
+      this.style.backgroundImage = "none";
       this.style.pointerEvents = "all";
    }, 800);
    scoreText.textContent = gameScore;
