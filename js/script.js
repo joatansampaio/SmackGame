@@ -44,7 +44,7 @@ function startGame() {
    }, timeLimit);
 
    let startCoundown = setInterval(() => {
-      countdown = 30;
+      countdown--;
       countdownBoard.textContent = countdown;
       if (countdown < 0) {
          countdown = 0;
