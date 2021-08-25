@@ -1,0 +1,2 @@
+# SmackGame
+ Smack Them!
