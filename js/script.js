@@ -1,15 +1,20 @@
-const holes = document.querySelectorAll(".hole");
-const scoreBoard = document.querySelector(".score");
-const moles = document.querySelectorAll(".mole");
-const countdownBoard = document.querySelector(".countdown");
+const spots = document.querySelectorAll(".hole");
+const scoreText = document.querySelector(".game-score");
+const characters = document.querySelectorAll(".mole");
+const countdownText = document.querySelector(".countdown");
 const startButton = document.querySelector(".start-button");
-
 let lastHole;
-let timeUp = false;
-let timeLimit = 30000;
-let score = 0;
+let gameOver = false;
+let gameDuration = 30000;
+let gameScore = 0;
 let countdown;
-let holesLengh = holes.length;
+let holesLengh = spots.length;
+
+function reset() {
+   countdownText.style.top = "9%";
+   countdownText.style.right = "5%";
+   countdownText.style.color = "rgb(1, 47, 117)";
+}
 
 function pickRandomHole(holes) {
    const randomHole = Math.floor(Math.random() * holesLengh);
@@ -23,48 +28,53 @@ function pickRandomHole(holes) {
 
 function popOut() {
    const time = Math.random() * 1000 + 400;
-   const hole = pickRandomHole(holes);
+   const hole = pickRandomHole(spots);
    hole.classList.toggle("up");
    setTimeout(function () {
       hole.classList.toggle("up");
-      if (!timeUp) popOut();
+      if (!gameOver) popOut();
    }, time);
 }
 
 function startGame() {
-   countdown = timeLimit / 1000;
-   scoreBoard.textContent = 0;
-   scoreBoard.style.display = "block";
-   countdownBoard.textContent = countdown;
-   timeUp = false;
-   score = 0;
+   reset();
+   countdown = gameDuration / 1000;
+   scoreText.textContent = 0;
+   scoreText.style.display = "block";
+   countdownText.textContent = countdown;
+   gameOver = false;
+   gameScore = 0;
    popOut();
    setTimeout(() => {
-      timeUp = true;
-   }, timeLimit);
+      gameOver = true;
+   }, gameDuration);
 
    let startCoundown = setInterval(() => {
       countdown--;
-      countdownBoard.textContent = countdown;
+      countdownText.textContent = countdown;
       if (countdown < 0) {
          countdown = 0;
+         countdownText.textContent = "Good Job, can you do better?";
+         countdownText.style.top = "50%";
+         countdownText.style.right = "8%";
+         countdownText.style.color = "white";
+         console.log("passou aqui");
          clearInterval(startCoundown);
-         countdownBoard.textContent("That's it, try again!");
       }
    }, 1000);
 }
 
 startButton.addEventListener("click", startGame);
 
-function whack(e) {
-   score++;
+function smash(e) {
+   gameScore++;
    this.style.backgroundImage = "url(../images/smashed.png)";
    this.style.pointerEvents = "none";
    setTimeout(() => {
       this.style.backgroundImage = "url(../images/character.png)";
       this.style.pointerEvents = "all";
    }, 800);
-   scoreBoard.textContent = score;
+   scoreText.textContent = gameScore;
 }
 
-moles.forEach((mole) => mole.addEventListener("click", whack));
+characters.forEach((mole) => mole.addEventListener("click", smash));
