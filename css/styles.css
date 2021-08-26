@@ -255,15 +255,19 @@ body {
       aspect-ratio: 1;
    }
    .game {
-      width: 260px;
-      height: 150px;
-      margin: 35px auto;
+      width: 200px;
+      height: 110px;
+      margin: 10px auto;
    }
    .game-container {
-      width: 300px;
-      height: 215px;
+      width: 260px;
+      height: 160px;
       background-size: cover;
       background-repeat: no-repeat;
+   }
+   .start-button {
+      padding: 1px 2px;
+      font-size: 12px;
    }
    .countdown {
       font-size: 23px;
