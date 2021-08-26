@@ -250,7 +250,10 @@ body {
    }
 }
 
-@media screen and (max-height: 320px) {
+@media screen and (orientation: landscape) {
+   * {
+      aspect-ratio: 1;
+   }
    .game {
       width: 260px;
       height: 150px;
@@ -261,6 +264,11 @@ body {
       height: 215px;
       background-size: cover;
       background-repeat: no-repeat;
+   }
+   .countdown {
+      font-size: 23px;
+      right: 2%;
+      z-index: 200;
    }
    .mole.back-row {
       background-size: 60%;
