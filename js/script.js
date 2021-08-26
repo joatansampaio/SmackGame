@@ -67,12 +67,12 @@ startButton.addEventListener("click", startGame);
 
 function smash(e) {
    gameScore++;
-   // this.style.backgroundImage = "url(\"../smashed.png\")"; //Github
-   this.style.backgroundImage = "url(../images/smashed.png)";
+   this.style.backgroundImage = 'url("../smashed.png")'; //Github
+   // this.style.backgroundImage = "url(../images/smashed.png)";
    this.style.pointerEvents = "none";
    setTimeout(() => {
-      // this.style.backgroundImage = "url(\"../character.png\")"; //Github
-      this.style.backgroundImage = "url('../images/character.png')"; //Local
+      this.style.backgroundImage = 'url("../character.png")'; //Github
+      // this.style.backgroundImage = "url('../images/character.png')"; //Local
       this.style.pointerEvents = "all";
    }, 800);
    scoreText.textContent = gameScore;
