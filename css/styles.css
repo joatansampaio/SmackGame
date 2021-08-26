@@ -17,7 +17,7 @@ body {
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   background-image: /*url("../background.png");*/ url("../images/background.png");
+   background-image: url("../images/background.png");
    overflow: hidden;
 }
 
@@ -40,7 +40,7 @@ body {
 .hole:after {
    content: "";
    display: block;
-   background-image: /*url("../hole.png"); */ url("../images/hole.png");
+   background-image: url("../images/hole.png");
    position: absolute;
    width: 100%;
    height: 70px;
@@ -49,7 +49,7 @@ body {
    background-size: contain;
 }
 .mole {
-   background-image: /* url("../character.png");*/ url("../images/character.png");
+   background-image: url("../images/character.png");
    background-size: contain;
    background-repeat: no-repeat;
    background-position: bottom;
@@ -57,7 +57,10 @@ body {
    top: 100%;
    width: 100%;
    height: 100%;
-   transition: 0.4s;
+   transition: 0.3s;
+}
+.mole.smashed {
+   background-image: url("../images/smashed.png");
 }
 .mole.back-row {
    background-size: 60%;
