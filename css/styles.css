@@ -250,7 +250,7 @@ body {
    }
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (max-height: 320px) and (orientation: landscape) {
    * {
       aspect-ratio: 1;
    }
