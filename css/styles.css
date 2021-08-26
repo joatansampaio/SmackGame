@@ -12,8 +12,6 @@ body {
 
 .game-container {
    border: 1px solid rgb(65, 42, 0);
-   width: 800px;
-   height: 600px;
    position: absolute;
    top: 50%;
    left: 50%;
@@ -26,9 +24,6 @@ body {
 --------------------------------------*/
 
 .game {
-   width: 600px;
-   height: 400px;
-   margin: 70px auto;
    z-index: 200;
    display: flex;
    flex-wrap: wrap;
@@ -44,7 +39,6 @@ body {
    background-image: url("../images/hole.png");
    position: absolute;
    width: 100%;
-   height: 70px;
    z-index: 2;
    bottom: -30px;
    background-size: contain;
@@ -58,18 +52,10 @@ body {
    top: 100%;
    width: 100%;
    height: 100%;
-   transition: 0.3s;
+   transition: 0.35s;
 }
 .mole.smashed {
    background-image: url("../images/smashed.png");
-}
-.mole.back-row {
-   background-size: 60%;
-   background-position-y: 85px;
-}
-.mole.front-row {
-   background-size: 80%;
-   background-position-y: 60px;
 }
 
 .hole.up .mole {
@@ -83,7 +69,6 @@ body {
    top: 9%;
    right: 5%;
    width: 100%;
-   font-size: 50px;
    text-align: right;
    color: rgb(1, 47, 117);
 }
@@ -93,30 +78,137 @@ body {
    transform: translate(-50%, -50);
    background-color: rgb(13, 98, 226);
    color: white;
-   padding: 20px 50px;
    border-radius: 5px;
    z-index: 200;
    cursor: pointer;
    border: none;
    outline: none;
-   font-size: 30px;
 }
 .start-button:hover {
    background-color: rgb(0, 60, 255);
 }
 
 .game-score {
-   font-size: 50px;
    color: rgb(3, 51, 97);
    position: absolute;
    top: 10%;
    left: 15%;
    transform: translate(-50%, -50%);
-   width: 200px;
-   height: 100px;
    text-align: center;
 }
 .game-score span {
    position: absolute;
    padding: 6px 10px;
+}
+
+/* Resposive Adjusts */
+
+@media screen and (min-width: 820px) {
+   .game {
+      width: 600px;
+      height: 400px;
+      margin: 70px auto;
+   }
+   .game-container {
+      width: 800px;
+      height: 600px;
+   }
+   .game-score {
+      width: 200px;
+      height: 100px;
+      font-size: 50px;
+   }
+   .start-button {
+      padding: 20px 50px;
+      font-size: 30px;
+   }
+   .countdown {
+      font-size: 50px;
+   }
+   .hole:after {
+      height: 70px;
+   }
+   .mole.back-row {
+      background-size: 60%;
+      background-position-y: 85px;
+   }
+   .mole.front-row {
+      background-size: 80%;
+      background-position-y: 60px;
+   }
+}
+@media screen and (max-width: 819px) and (min-width: 420px) {
+   .game {
+      width: 290px;
+      height: 200px;
+      margin: 38px auto;
+   }
+   .game-container {
+      width: 410px;
+      height: 315px;
+      background-size: cover;
+      background-repeat: no-repeat;
+   }
+   .game-score {
+      width: 88px;
+      height: 44px;
+      font-size: 33px;
+   }
+   .start-button {
+      padding: 3.3px 6.6px;
+      font-size: 19.8px;
+   }
+   .countdown {
+      font-size: 24.2px;
+      right: 2%;
+   }
+   .hole:after {
+      height: 55px;
+   }
+   .mole.back-row {
+      background-size: 60%;
+      background-position-y: 38px;
+   }
+   .mole.front-row {
+      background-size: 80%;
+      background-position-y: 28px;
+   }
+}
+
+@media screen and (max-width: 419px) {
+   .game {
+      width: 280px;
+      height: 190px;
+      margin: 35px auto;
+   }
+   .game-container {
+      width: 350px;
+      height: 285px;
+      background-size: cover;
+      background-repeat: no-repeat;
+   }
+   .game-score {
+      width: 80px;
+      height: 40px;
+      font-size: 30px;
+   }
+   .start-button {
+      padding: 3px 6px;
+      font-size: 18px;
+   }
+   .countdown {
+      font-size: 22px;
+      right: 2%;
+   }
+   .hole:after {
+      height: 50px;
+   }
+   .mole.back-row {
+      background-size: 60%;
+      background-position-y: 40px;
+   }
+   .mole.front-row {
+      background-size: 80%;
+      background-position-y: 30px;
+   }
 }
