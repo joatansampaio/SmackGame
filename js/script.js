@@ -81,6 +81,7 @@ function smash(e) {
    scoreText.textContent = "Score: " + gameScore;
    if (bestScore === null) {
       localStorage.setItem("best-score", gameScore);
+      bestScoreText.textContent = "0";
    } else {
       if (bestScore < gameScore) {
          localStorage.setItem("best-score", gameScore);

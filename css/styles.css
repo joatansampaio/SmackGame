@@ -76,7 +76,7 @@ body {
    position: absolute;
    bottom: 10px;
    transform: translate(-50%, -50);
-   background-color: rgb(13, 98, 226);
+   background-color: brown;
    color: white;
    border-radius: 5px;
    z-index: 200;
@@ -85,7 +85,7 @@ body {
    outline: none;
 }
 .start-button:hover {
-   background-color: rgb(0, 60, 255);
+   background-color: rgb(173, 111, 52);
 }
 
 .game-score {
@@ -99,6 +99,11 @@ body {
 .game-score span {
    position: absolute;
    padding: 6px 10px;
+}
+.best-score {
+   color: rgb(255, 255, 255);
+   background-color: brown;
+   padding: 5px;
 }
 
 /* Resposive Adjusts */
@@ -119,7 +124,6 @@ body {
       font-size: 50px;
    }
    .best-score {
-      color: white;
       font-size: 30px;
       position: absolute;
       z-index: 200;
@@ -163,7 +167,6 @@ body {
       font-size: 33px;
    }
    .best-score {
-      color: white;
       font-size: 28px;
       position: absolute;
       z-index: 200;
@@ -209,7 +212,6 @@ body {
       font-size: 30px;
    }
    .best-score {
-      color: white;
       font-size: 24px;
       position: absolute;
       z-index: 200;
@@ -254,7 +256,6 @@ body {
       font-size: 30px;
    }
    .best-score {
-      color: white;
       font-size: 20px;
       position: absolute;
       z-index: 200;
@@ -298,7 +299,6 @@ body {
       background-repeat: no-repeat;
    }
    .best-score {
-      color: white;
       font-size: 20px;
       position: absolute;
       z-index: 200;
