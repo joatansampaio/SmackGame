@@ -3,12 +3,16 @@ const scoreText = document.querySelector(".game-score");
 const characters = document.querySelectorAll(".mole");
 const countdownText = document.querySelector(".countdown");
 const startButton = document.querySelector(".start-button");
+const bestScoreText = document.querySelector(".best-score");
 let lastHole;
 let gameOver = false;
 let gameDuration = 30000;
 let gameScore = 0;
 let countdown;
 let holesLengh = spots.length;
+
+let bestScore = localStorage.getItem("best-score");
+bestScoreText.textContent = "All time best: " + bestScore;
 
 function reset() {
    countdownText.style.top = "9%";
@@ -74,7 +78,16 @@ function smash(e) {
       this.classList.toggle("smashed");
       this.style.pointerEvents = "all";
    }, 800);
-   scoreText.textContent = gameScore;
+   scoreText.textContent = "Score: " + gameScore;
+   if (bestScore === null) {
+      localStorage.setItem("best-score", gameScore);
+   } else {
+      if (bestScore < gameScore) {
+         localStorage.setItem("best-score", gameScore);
+      }
+   }
+   bestScoreText.textContent =
+      "All time best: " + localStorage.getItem("best-score");
 }
 
 characters.forEach((mole) => mole.addEventListener("click", smash));
