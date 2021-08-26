@@ -17,7 +17,7 @@ body {
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   background-image: url("../background.png");
+   background-image: url("../background.png"); /*url("../images/background.png") */
    overflow: hidden;
 }
 
@@ -40,7 +40,7 @@ body {
 .hole:after {
    content: "";
    display: block;
-   background-image: url("../hole.png");
+   background-image: url("../hole.png"); /*url("../images/hole.png") */
    position: absolute;
    width: 100%;
    height: 70px;
@@ -49,7 +49,7 @@ body {
    background-size: contain;
 }
 .mole {
-   background-image: url("../character.png");
+   background-image: url("../character.png"); /*url("../images/character.png") */
    background-size: contain;
    background-repeat: no-repeat;
    background-position: bottom;
