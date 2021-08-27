@@ -4,6 +4,8 @@ const characters = document.querySelectorAll(".mole");
 const countdownText = document.querySelector(".countdown");
 const startButton = document.querySelector(".start-button");
 const bestScoreText = document.querySelector(".best-score");
+const gameContainer = document.querySelector(".game-container");
+
 let lastHole;
 let gameOver = false;
 let gameDuration = 30000;
@@ -12,12 +14,6 @@ let countdown;
 
 let bestScore = localStorage.getItem("best-score");
 bestScoreText.textContent = "All time best: " + bestScore;
-
-function reset() {
-   countdownText.style.top = "9%";
-   countdownText.style.right = "5%";
-   countdownText.style.color = "rgb(1, 47, 117)";
-}
 
 function pickRandomHole(spots) {
    const randomHole = Math.floor(Math.random() * spots.length);
@@ -40,9 +36,8 @@ function popOut() {
 }
 
 function startGame() {
-   reset();
    countdown = gameDuration / 1000;
-   scoreText.textContent = 0;
+   scoreText.textContent = "Score: " + 0;
    scoreText.style.display = "block";
    countdownText.textContent = countdown;
    gameOver = false;
@@ -58,9 +53,6 @@ function startGame() {
       if (countdown < 0) {
          countdown = 0;
          countdownText.textContent = "Good Job, can you do better?";
-         countdownText.style.top = "50%";
-         countdownText.style.right = "8%";
-         countdownText.style.color = "white";
          clearInterval(startCoundown);
       }
    }, 1000);

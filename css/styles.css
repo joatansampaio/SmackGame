@@ -28,6 +28,41 @@ body {
    display: flex;
    flex-wrap: wrap;
 }
+.menu {
+   position: absolute;
+   width: 100%;
+   background-color: darkslateblue;
+   bottom: 0%;
+}
+
+/* Game Content
+--------------------------------------------*/
+.game-score {
+   color: rgb(255, 255, 255);
+   position: absolute;
+}
+.best-score {
+   color: rgb(255, 255, 255);
+   position: absolute;
+}
+.countdown {
+   position: absolute;
+   color: rgb(255, 255, 255);
+}
+.start-button {
+   position: absolute;
+   background-color: rgb(108, 18, 211);
+   color: white;
+   border-radius: 5px;
+   z-index: 5;
+   cursor: pointer;
+   border: none;
+   outline: none;
+}
+.start-button:hover {
+   background-color: rgb(123, 37, 223);
+}
+
 .hole {
    flex: 1 0 33.33%;
    position: relative;
@@ -62,45 +97,6 @@ body {
    top: 0;
 }
 
-/* Game Content
---------------------------------------------*/
-.countdown {
-   position: absolute;
-   top: 9%;
-   right: 5%;
-   width: 100%;
-   text-align: right;
-   color: rgb(1, 47, 117);
-}
-.start-button {
-   position: absolute;
-   bottom: 10px;
-   left: 5px;
-   background-color: brown;
-   color: white;
-   border-radius: 5px;
-   z-index: 5;
-   cursor: pointer;
-   border: none;
-   outline: none;
-}
-.start-button:hover {
-   background-color: rgb(173, 111, 52);
-}
-
-.game-score {
-   color: rgb(3, 51, 97);
-   position: absolute;
-   top: 4%;
-   left: 4%;
-   text-align: center;
-}
-.best-score {
-   color: rgb(255, 255, 255);
-   background-color: brown;
-   padding: 5px;
-}
-
 /* Resposive Adjusts */
 
 @media screen and (min-width: 820px) {
@@ -113,35 +109,42 @@ body {
       width: 800px;
       height: 600px;
    }
+   .menu {
+      height: 80px;
+      border-top: white 1px dashed;
+   }
+   .best-score,
    .game-score {
-      width: 200px;
-      height: 100px;
-      font-size: 50px;
+      font-size: 25px;
+      z-index: 4;
+      top: 20%;
    }
    .best-score {
-      font-size: 30px;
-      position: absolute;
-      z-index: 200;
-      top: 90%;
-      right: 8%;
+      right: 4%;
+   }
+   .game-score {
+      left: 4%;
    }
    .start-button {
-      padding: 20px 50px;
-      font-size: 30px;
+      padding: 6px 15px;
+      font-size: 35px;
+      top: 15%;
+      left: 43%;
    }
    .countdown {
-      font-size: 50px;
+      font-size: 55px;
+      right: 47%;
    }
    .hole:after {
-      height: 70px;
+      height: 100px;
    }
    .mole.back-row {
       background-size: 60%;
-      background-position-y: 85px;
+      background-position-y: 87px;
    }
    .mole.front-row {
       background-size: 80%;
-      background-position-y: 60px;
+      background-position-y: 59px;
    }
 }
 @media screen and (max-width: 819px) and (min-width: 420px) {
@@ -156,36 +159,42 @@ body {
       background-size: cover;
       background-repeat: no-repeat;
    }
+   .menu {
+      height: 40px;
+      border-top: white 1px dashed;
+   }
+   .best-score,
    .game-score {
-      width: 88px;
-      height: 44px;
-      font-size: 33px;
+      font-size: 16px;
+      z-index: 4;
+      top: 15%;
    }
    .best-score {
-      font-size: 28px;
-      position: absolute;
-      z-index: 200;
-      top: 87%;
-      right: 5%;
-   }
-   .start-button {
-      padding: 3.3px 6.6px;
-      font-size: 19.8px;
-   }
-   .countdown {
-      font-size: 24.2px;
       right: 2%;
    }
+   .game-score {
+      left: 2%;
+   }
+   .start-button {
+      padding: 6px 15px;
+      font-size: 22px;
+      top: 8%;
+      left: 39%;
+   }
+   .countdown {
+      font-size: 26px;
+      right: 47%;
+   }
    .hole:after {
-      height: 55px;
+      height: 65px;
    }
    .mole.back-row {
       background-size: 60%;
-      background-position-y: 38px;
+      background-position-y: 43.5px;
    }
    .mole.front-row {
       background-size: 80%;
-      background-position-y: 28px;
+      background-position-y: 29px;
    }
 }
 
@@ -201,36 +210,42 @@ body {
       background-size: cover;
       background-repeat: no-repeat;
    }
-   .game-score {
-      width: 80px;
+   .menu {
       height: 40px;
-      font-size: 30px;
+      border-top: white 1px dashed;
+   }
+   .best-score,
+   .game-score {
+      font-size: 14px;
+      z-index: 4;
+      top: 15%;
    }
    .best-score {
-      font-size: 24px;
-      position: absolute;
-      z-index: 200;
-      top: 87%;
-      right: 6%;
-   }
-   .start-button {
-      padding: 3px 6px;
-      font-size: 18px;
-   }
-   .countdown {
-      font-size: 22px;
       right: 2%;
    }
+   .game-score {
+      left: 2%;
+   }
+   .start-button {
+      padding: 6px 15px;
+      font-size: 20px;
+      top: 8%;
+      left: 39%;
+   }
+   .countdown {
+      font-size: 24px;
+      right: 47%;
+   }
    .hole:after {
-      height: 50px;
+      height: 62px;
    }
    .mole.back-row {
       background-size: 60%;
-      background-position-y: 40px;
+      background-position-y: 41px;
    }
    .mole.front-row {
       background-size: 80%;
-      background-position-y: 30px;
+      background-position-y: 29px;
    }
 }
 @media screen and (max-width: 320px) {
@@ -245,76 +260,41 @@ body {
       background-size: cover;
       background-repeat: no-repeat;
    }
-   .game-score {
-      width: 80px;
+   .menu {
       height: 40px;
-      font-size: 30px;
+      border-top: white 1px dashed;
+   }
+   .best-score,
+   .game-score {
+      font-size: 12px;
+      z-index: 4;
+      top: 15%;
    }
    .best-score {
-      font-size: 20px;
-      position: absolute;
-      z-index: 200;
-      top: 85%;
-      right: 6%;
+      right: 2%;
+   }
+   .game-score {
+      left: 2%;
    }
    .start-button {
-      padding: 3px 6px;
+      padding: 6px 15px;
       font-size: 18px;
+      top: 8%;
+      left: 39%;
    }
    .countdown {
       font-size: 22px;
-      right: 2%;
+      right: 45%;
    }
    .hole:after {
-      height: 50px;
+      height: 55px;
    }
    .mole.back-row {
       background-size: 60%;
-      background-position-y: 20px;
+      background-position-y: 30px;
    }
    .mole.front-row {
       background-size: 80%;
-      background-position-y: 10px;
-   }
-}
-
-@media screen and (max-height: 320px) and (orientation: landscape) {
-   * {
-      aspect-ratio: 1;
-   }
-   .game {
-      width: 200px;
-      height: 110px;
-      margin: 10px auto;
-   }
-   .game-container {
-      width: 260px;
-      height: 160px;
-      background-size: cover;
-      background-repeat: no-repeat;
-   }
-   .best-score {
-      font-size: 20px;
-      position: absolute;
-      z-index: 200;
-      top: 85%;
-      right: 6%;
-   }
-   .start-button {
-      padding: 1px 2px;
-      font-size: 12px;
-   }
-   .countdown {
-      font-size: 23px;
-      right: 2%;
-      z-index: 200;
-   }
-   .mole.back-row {
-      background-size: 60%;
-      background-position-y: 20px;
-   }
-   .mole.front-row {
-      background-size: 80%;
-      background-position-y: 10px;
+      background-position-y: 18px;
    }
 }
