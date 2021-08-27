@@ -9,7 +9,6 @@ let gameOver = false;
 let gameDuration = 30000;
 let gameScore = 0;
 let countdown;
-let holesLengh = spots.length;
 
 let bestScore = localStorage.getItem("best-score");
 bestScoreText.textContent = "All time best: " + bestScore;
@@ -20,11 +19,11 @@ function reset() {
    countdownText.style.color = "rgb(1, 47, 117)";
 }
 
-function pickRandomHole(holes) {
-   const randomHole = Math.floor(Math.random() * holesLengh);
-   const hole = holes[randomHole];
+function pickRandomHole(spots) {
+   const randomHole = Math.floor(Math.random() * spots.length);
+   const hole = spots[randomHole];
    if (hole === lastHole) {
-      return pickRandomHole(holes);
+      return pickRandomHole(spots);
    }
    lastHole = hole;
    return hole;
@@ -72,7 +71,6 @@ startButton.addEventListener("click", startGame);
 function smash(e) {
    gameScore++;
    this.classList.toggle("smashed");
-   // this.style.backgroundImage = "url(../images/smashed.png)";
    this.style.pointerEvents = "none";
    setTimeout(() => {
       this.classList.toggle("smashed");
