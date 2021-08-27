@@ -48,8 +48,21 @@ function startGame() {
    }, gameDuration);
 
    let startCoundown = setInterval(() => {
+      let mole = document.querySelectorAll(".back-row");
+      let activateSkin = Math.floor(Math.random() * 2);
+      console.log(activateSkin);
       countdown--;
       countdownText.textContent = countdown;
+      if (activateSkin == 1) {
+         mole.forEach((item) => {
+            item.classList.toggle("skin");
+         });
+         setTimeout(() => {
+            mole.forEach((item) => {
+               item.classList.toggle("skin");
+            });
+         }, 800);
+      }
       if (countdown < 0) {
          countdown = 0;
          countdownText.textContent = "Good Job, can you do better?";
@@ -61,7 +74,12 @@ function startGame() {
 startButton.addEventListener("click", startGame);
 
 function smash(e) {
-   gameScore++;
+   if (this.classList.contains("skin")) {
+      gameScore += 5;
+   } else {
+      gameScore++;
+   }
+
    this.classList.toggle("smashed");
    this.style.pointerEvents = "none";
    setTimeout(() => {

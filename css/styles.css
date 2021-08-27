@@ -7,7 +7,7 @@
 }
 body {
    font-family: Helvetica, sans-serif;
-   background-color: rgb(240, 220, 196);
+   background-color: rgb(35, 3, 48);
 }
 
 .game-container {
@@ -67,6 +67,7 @@ body {
    flex: 1 0 33.33%;
    position: relative;
    overflow: hidden;
+   border-bottom: 2px solid black;
 }
 .hole:after {
    content: "";
@@ -88,6 +89,9 @@ body {
    width: 100%;
    height: 100%;
    transition: 0.35s;
+}
+.mole.skin {
+   background-image: url("../images/characterSkin1.png");
 }
 .mole.smashed {
    background-image: url("../images/smashed.png");
